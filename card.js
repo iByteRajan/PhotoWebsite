@@ -7,14 +7,20 @@ let column2=document.querySelectorAll('.c2p');
 let column3=document.querySelectorAll('.c3p');
 var imgId;
 
-imgContainers.forEach(imgContainer => {
-    imgContainer.addEventListener("click", () => {
-        slider.style.display = "block";
-        bg.style.opacity = "0.2"; 
-        imgId=parseInt(imgContainer.getAttribute("imgId"));
-        updateFirstSlide(imgId);
-    });
-});
+window.addEventListener("resize",checkScreenWidth);
+function checkScreenWidth(){
+    if(window.innerWidth>650){
+        imgContainers.forEach(imgContainer => {
+            imgContainer.addEventListener("click", () => {
+                slider.style.display = "block";
+                bg.style.opacity = "0.2"; 
+                imgId=parseInt(imgContainer.getAttribute("imgId"));
+                updateFirstSlide(imgId);
+            });
+        });
+    }
+}
+
 
 
 close.addEventListener("click", () => {
