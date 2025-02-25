@@ -7,9 +7,7 @@ let column2=document.querySelectorAll('.c2p');
 let column3=document.querySelectorAll('.c3p');
 var imgId;
 
-window.addEventListener("resize",checkScreenWidth);
-function checkScreenWidth(){
-    if(window.innerWidth>650){
+
         imgContainers.forEach(imgContainer => {
             imgContainer.addEventListener("click", () => {
                 slider.style.display = "block";
@@ -18,8 +16,7 @@ function checkScreenWidth(){
                 updateFirstSlide(imgId);
             });
         });
-    }
-}
+
 
 
 
